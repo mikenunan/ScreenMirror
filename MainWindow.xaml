@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ScreenMirror"
         mc:Ignorable="d"
         WindowStyle="None" MouseDown="MainWindow_OnMouseDown"
-        Title="Screen Mirror" Height="450" Width="800">
+        Title="Screen Mirror" Height="1200" Width="1800">
     <WindowChrome.WindowChrome>
         <WindowChrome
             CaptionHeight="1"
