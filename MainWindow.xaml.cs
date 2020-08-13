@@ -64,8 +64,8 @@ namespace ScreenMirror
             var pixelSize = (System.Windows.Size)_transformToDevice.Transform((Vector)new System.Windows.Size(Width, Height));
             var pixelSizeWidth = (int)pixelSize.Width;
             var pixelSizeHeight = (int)pixelSize.Height;
-            var bitmap = new Bitmap(pixelSizeWidth, pixelSizeHeight);
-            var graphics = Graphics.FromImage(bitmap);
+            using var bitmap = new Bitmap(pixelSizeWidth, pixelSizeHeight);
+            using var graphics = Graphics.FromImage(bitmap);
             graphics.CopyFromScreen(pixelPositionX, pixelPositionY, 0, 0, new System.Drawing.Size(pixelSizeWidth, pixelSizeWidth));
             Image.Source = ToBitmapSource(bitmap, pixelSizeWidth, pixelSizeHeight);
         }
